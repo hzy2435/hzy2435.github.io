@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"hzy2435.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/public/search.xml"};
   </script>
 
-  <meta name="description" content="Java 猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="len&#39;s blog">
-<meta property="og:url" content="https://hzy2435.github.io/archives/index.html">
+  <meta name="description" content="根据字段值连表查询">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 根据条件连多表查询">
+<meta property="og:url" content="https://hzy2435.github.io/2020/06/13/mysql-%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E8%BF%9E%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/index.html">
 <meta property="og:site_name" content="len&#39;s blog">
-<meta property="og:description" content="Java 猿">
+<meta property="og:description" content="根据字段值连表查询">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-13T02:12:52.000Z">
+<meta property="article:modified_time" content="2020-06-13T15:57:07.990Z">
 <meta property="article:author" content="len">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hzy2435.github.io/archives/">
+<link rel="canonical" href="https://hzy2435.github.io/2020/06/13/mysql-%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E8%BF%9E%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | len's blog</title>
+  <title>mysql 根据条件连多表查询 | len's blog</title>
   
 
 
@@ -198,90 +201,131 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hzy2435.github.io/2020/06/13/mysql-%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E8%BF%9E%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/smile.jfif">
+      <meta itemprop="name" content="len">
+      <meta itemprop="description" content="Java 猿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="len's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mysql 根据条件连多表查询
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-13 10:12:52 / 修改时间：23:57:07" itemprop="dateCreated datePublished" datetime="2020-06-13T10:12:52+08:00">2020-06-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%9E%E6%93%8D/" itemprop="url" rel="index"><span itemprop="name">实操</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%9E%E6%93%8D/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <div class="post-description">根据字段值连表查询</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <h2 id="场景介绍"><a href="#场景介绍" class="headerlink" title="场景介绍"></a>场景介绍</h2><p>​        在工作中，有这样一个场景：比如微信用户与某个商户做关联，由于存在有多个业务场景，所以每个业务都有自己独立的微信用户表，但商户信息表只有一份。为了将微信用户与商户做关联，且为多对多的关系，这时会在关联表中设计一个表示业务场景的标识。</p>
+<h2 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h2><p>​       根据以上场景，大概会有以下表：</p>
+<ul>
+<li>微信用户表：<code>tb_wx_merchant</code>, <code>tb_wx_selfcheck</code></li>
+<li>商户表：<code>tb_subject</code></li>
+<li>关联表：<code>tb_wx_bind_subject</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_wx_bind_subject(</span><br><span class="line">	<span class="keyword">oid</span> <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    subject_id <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    wx_user_id <span class="built_in">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    wx_type <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    create_date datetime <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">	PRIMARY <span class="keyword">KEY</span> (<span class="keyword">oid</span>)</span><br><span class="line">)<span class="keyword">engine</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT = <span class="number">1</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = utf8</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>其中 <code>wx_type</code> 在这里表示相关的业务场景，比如：<code>MERCHANT</code>、<code>SELFCHECK</code></p>
+<h2 id="根据字段内容连多表查询"><a href="#根据字段内容连多表查询" class="headerlink" title="根据字段内容连多表查询"></a>根据字段内容连多表查询</h2><p>查询所有微信用户的商户记录信息：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	a.oid,</span><br><span class="line">	a.subject_id,</span><br><span class="line">	a.wx_user_id,</span><br><span class="line">	a.wx_type,</span><br><span class="line">	a.create_date,</span><br><span class="line">	b.subject_name,</span><br><span class="line">	b.address,</span><br><span class="line">	(</span><br><span class="line">        <span class="keyword">CASE</span> a.wx_type</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'MERCHANT'</span> <span class="keyword">THEN</span> c.nick_name</span><br><span class="line">        <span class="keyword">WHEN</span> <span class="string">'SELFCHECK'</span> <span class="keyword">THEN</span> d.nick_name</span><br><span class="line">        <span class="keyword">END</span></span><br><span class="line">    ) nick_name,</span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">CASE</span> a.wx_type</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'MERCHANT'</span> <span class="keyword">THEN</span> c.mobile</span><br><span class="line">        <span class="keyword">WHEN</span> <span class="string">'SELFCHECK'</span> <span class="keyword">THEN</span> d.mobile</span><br><span class="line">        <span class="keyword">END</span></span><br><span class="line">    ) mobile</span><br><span class="line"><span class="keyword">FROM</span> tb_wx_bind_subject a</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> patrol_subject b <span class="keyword">ON</span> a.subject_id = b.oid</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> tb_wx_selfcheck c <span class="keyword">ON</span> a.wx_type = <span class="string">'SELFCHECK'</span> <span class="keyword">AND</span> a.wx_user_id = d.oid</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> tb_wx_merchant d <span class="keyword">ON</span> a.wx_type = <span class="string">'MERCHANT'</span> <span class="keyword">AND</span> a.wx_user_id = e.oid</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-13T10:12:52+08:00"
-              content="2020-06-13">
-          06-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/13/mysql-%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E8%BF%9E%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" itemprop="url">
-            <span itemprop="name">mysql 根据条件连多表查询</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-18T22:47:02+08:00"
-              content="2020-04-18">
-          04-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/18/SpringBoot-File/" itemprop="url">
-            <span itemprop="name">SpringBoot 文件上传和下载简单实现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-05T02:58:31+08:00"
-              content="2020-04-05">
-          04-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/05/hibernate-validator/" itemprop="url">
-            <span itemprop="name">hibernate-validator 使用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p>如上所示，主要是利用了 <code>MySQL</code> 中 <code>case ... when ... then</code>  结构进行判断匹配返回，缺点就是如果需要返回多个值时，需要重复使用 <code>case ... when ... then</code>  结构。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>len
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hzy2435.github.io/2020/06/13/mysql-%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E8%BF%9E%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" title="mysql 根据条件连多表查询">https://hzy2435.github.io/2020/06/13/mysql-根据条件连多表查询/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/18/SpringBoot-File/" rel="prev" title="SpringBoot 文件上传和下载简单实现">
+      <i class="fa fa-chevron-left"></i> SpringBoot 文件上传和下载简单实现
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -334,6 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景介绍"><span class="nav-number">1.</span> <span class="nav-text">场景介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库表"><span class="nav-number">2.</span> <span class="nav-text">数据库表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据字段内容连多表查询"><span class="nav-number">3.</span> <span class="nav-text">根据字段内容连多表查询</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
