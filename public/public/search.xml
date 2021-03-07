@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Good Tools </title>
+      <link href="/2021/03/07/Good-Tools/"/>
+      <url>/2021/03/07/Good-Tools/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Money"><a href="#Money" class="headerlink" title="Money"></a>Money</h2><p>正如标题所示，这是一个跟 Money 操作相关的工具。在 Java 类库中，为了保证 Money 操作的正确性，不推荐直接使用 Java 的浮点型，比如 float 或 double 操作，这是因为在操作时会造成数据精度的丢失；所以大部分情况下，会直接使用 BigDecimal 类对浮点数据进行操作。但 BigDecimal 在对 Money 操作时，很多时候也不是很方便，所以使用 Money 工具可以很方便的直接处理 Money，包括对 Money 进行单位换算等操作。</p><ul><li><p>引入 Maven 依赖</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.joda<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>joda-money<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>进行数据操作示例</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 Money 对象初始化 30元</span></span><br><span class="line">Money thirty = Money.of(CurrencyUnit.of(<span class="string">"CNY"</span>), <span class="number">30.0</span>);</span><br><span class="line"><span class="comment">// 将 30元转换为分</span></span><br><span class="line">Long fen = thirty.getAmountMinorLong();</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot 事务管理</title>
       <link href="/2021/02/28/SpringBoot-transaction/"/>
       <url>/2021/02/28/SpringBoot-transaction/</url>
